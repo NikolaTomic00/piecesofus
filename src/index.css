@@ -1,0 +1,502 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Geist:wght@400;500;600;700&family=Great+Vibes&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Edwardian Script ITC";
+  src: url("./assets/fonts/edwardianscriptitc.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Bickham Script Pro";
+  src: url("./assets/fonts/bickham-script-pro-semibold.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+}
+
+:root {
+  --invitation-bg: #f4ead8;
+  --invitation-border: #6b5a42;
+  --frame-gold: #b68d48;
+  --invitation-text: #5f5552;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --script: "Edwardian Script ITC", "Bickham Script Pro", "Great Vibes", cursive;
+  color-scheme: light;
+  color: var(--invitation-text);
+  background: var(--invitation-bg);
+  font: 16px/1.45 var(--serif);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--invitation-bg);
+}
+
+.invitation-bg {
+  background-color: var(--invitation-bg);
+  background-image: url('/background.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.profile-pic-section {
+  position: relative;
+  min-height: auto;
+  overflow: hidden;
+  padding: clamp(2rem, 7svh, 4.5rem) 1rem clamp(0.9rem, 2.5svh, 1.4rem);
+}
+
+.profile-pic-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-corner-ornament {
+  position: absolute;
+  top: clamp(0.4rem, 2svh, 1.25rem);
+  left: clamp(-1.35rem, -5vw, -0.35rem);
+  z-index: 1;
+  width: min(60vw, 15rem);
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+.profile-frame {
+  position: relative;
+  z-index: 4;
+  width: min(76vw, 21rem);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 5px solid var(--invitation-border);
+  border-radius: 1.75rem;
+  background: #eadcc6;
+  box-shadow:
+    0 18px 42px rgba(53, 43, 30, 0.2),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.38);
+}
+
+.profile-frame img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  border-radius: calc(1.75rem - 5px);
+  object-position: 50% 58%;
+}
+
+.profile-names {
+  position: relative;
+  z-index: 2;
+  margin: clamp(1rem, 3.5vw, 1.4rem) 0 0;
+  color: var(--invitation-border);
+  font-family: var(--script);
+  font-size: clamp(4.1rem, 17vw, 6.1rem);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.profile-invitation-copy {
+  width: min(100%, 21rem);
+  margin: clamp(1rem, 3.8vw, 1.5rem) 0 0;
+  color: var(--invitation-border);
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(1.16rem, 5vw, 1.45rem);
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.calendar-section {
+  display: grid;
+  place-items: start center;
+  padding: clamp(0.15rem, 1svh, 0.6rem) 1rem clamp(3rem, 8svh, 5rem);
+}
+
+.calendar-card {
+  width: min(100%, 21rem);
+  overflow: hidden;
+  border: 2px solid var(--invitation-border);
+  border-radius: 1.35rem;
+  background: rgba(255, 252, 246, 0.84);
+  box-shadow: 0 18px 42px rgba(53, 43, 30, 0.14);
+}
+
+.calendar-picture {
+  position: relative;
+  display: flex;
+  min-height: 10.8rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: 1.2rem;
+  color: #fffaf2;
+  background:
+    linear-gradient(to top, rgba(43, 33, 22, 0.62), rgba(43, 33, 22, 0.16)),
+    url('/weddingring.jpg') center / cover no-repeat;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+.calendar-picture h2,
+.calendar-picture h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: var(--serif);
+  letter-spacing: 0;
+}
+
+.calendar-picture h2 {
+  font-size: clamp(1.75rem, 8vw, 2.45rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.calendar-picture h3 {
+  margin-top: 0.35rem;
+  font-size: clamp(1.05rem, 4.7vw, 1.35rem);
+  font-weight: 500;
+}
+
+.calendar-date {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.38rem;
+  padding: 1rem;
+  color: var(--invitation-border);
+  font-family: "Times New Roman", Times, serif;
+}
+
+.calendar-day,
+.calendar-number {
+  display: flex;
+  width: 100%;
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: clamp(0.92rem, 4.1vw, 1.05rem);
+  line-height: 1;
+}
+
+.calendar-day {
+  height: auto;
+  color: #4e412f;
+  font-weight: 700;
+}
+
+.calendar-number {
+  position: relative;
+  color: #6e604b;
+  font-weight: 400;
+}
+
+.calendar-number-current {
+  background: transparent;
+  color: #fffaf2;
+  font-weight: 700;
+}
+
+.calendar-heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2.35rem;
+  height: 2.35rem;
+  fill: #c73632;
+  filter: drop-shadow(0 7px 10px rgba(53, 43, 30, 0.18));
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  animation: calendar-heartbeat 1.45s ease-in-out infinite;
+}
+
+.calendar-current-day {
+  position: relative;
+  z-index: 1;
+  color: #fffaf2;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(53, 43, 30, 0.35);
+}
+
+@keyframes calendar-heartbeat {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  35% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  55% {
+    transform: translate(-50%, -50%) scale(0.98);
+  }
+
+  75% {
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+}
+
+.schedule-section {
+  display: grid;
+  place-items: start center;
+  padding: clamp(0.5rem, 2svh, 1rem) 1rem clamp(3.4rem, 8svh, 5.25rem);
+}
+
+.schedule-list {
+  display: grid;
+  width: min(100%, 23rem);
+  gap: clamp(0.15rem, 1vw, 0.45rem);
+}
+
+.schedule-block {
+  display: grid;
+  gap: clamp(0.3rem, 1.2vw, 0.55rem);
+}
+
+.schedule-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(7rem, 32%);
+  align-items: center;
+  gap: clamp(0.55rem, 2.8vw, 0.9rem);
+}
+
+.schedule-row-reverse {
+  grid-template-columns: minmax(7rem, 32%) minmax(0, 1fr);
+}
+
+.schedule-copy {
+  color: var(--invitation-border);
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+
+.schedule-copy h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 5.55vw, 1.58rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.schedule-copy p {
+  margin: 0.35rem 0 0;
+  font-size: clamp(0.92rem, 4.05vw, 1.06rem);
+  font-weight: 400;
+  line-height: 1.18;
+}
+
+.schedule-copy strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: clamp(1.12rem, 5vw, 1.38rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.schedule-copy a {
+  display: inline-block;
+  margin-top: 0.45rem;
+  color: var(--invitation-border);
+  font-size: clamp(0.78rem, 3.4vw, 0.9rem);
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.schedule-icon-wrap {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.schedule-icon {
+  display: block;
+  flex: 0 0 auto;
+  background-repeat: no-repeat;
+  background-size: 372px 524px;
+  opacity: 0.94;
+  mix-blend-mode: multiply;
+}
+
+.schedule-icon-suit {
+  width: 72px;
+  height: 99px;
+  background-image: url('/3.1.png');
+  background-position: -150px 0;
+}
+
+.schedule-icon-dress {
+  width: 88px;
+  height: 95px;
+  background-image: url('/3.2.png');
+  background-position: -142px -11px;
+}
+
+.schedule-icon-rings {
+  width: 132px;
+  height: 92px;
+  background-image: url('/3.3.png');
+  background-position: -120px -12px;
+}
+
+.schedule-icon-couple {
+  width: 76px;
+  height: 92px;
+  background-image: url('/3.4.png');
+  background-position: -148px -12px;
+}
+
+.schedule-connector {
+  display: flex;
+  height: clamp(5.2rem, 19vw, 6.45rem);
+  align-items: center;
+  justify-content: center;
+  margin: clamp(-0.25rem, -0.5vw, -0.05rem) 0 clamp(0.1rem, 0.8vw, 0.35rem);
+  pointer-events: none;
+}
+
+.schedule-line {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 372px 524px;
+  opacity: 0.94;
+  mix-blend-mode: multiply;
+}
+
+.schedule-line-1 {
+  width: 132px;
+  height: 98px;
+  background-image: url('/3.line1.png');
+  background-position: -138px -20px;
+}
+
+.schedule-line-2 {
+  width: 128px;
+  height: 84px;
+  background-image: url('/3.line2.png');
+  background-position: -137px -33px;
+}
+
+@media (min-width: 640px) {
+  .profile-pic-section {
+    padding-top: 5rem;
+  }
+
+  .profile-corner-ornament {
+    left: max(-1rem, calc(50% - 19rem));
+    width: min(28vw, 12rem);
+  }
+
+  .profile-frame {
+    width: min(42vw, 24rem);
+    border-radius: 2rem;
+    border-width: 6px;
+  }
+
+  .profile-frame img {
+    border-radius: calc(2rem - 6px);
+  }
+
+  .profile-names {
+    font-size: clamp(5rem, 11vw, 7rem);
+  }
+
+  .profile-invitation-copy {
+    width: min(100%, 24rem);
+    font-size: clamp(1.35rem, 3vw, 1.65rem);
+  }
+
+  .calendar-card {
+    width: min(100%, 24rem);
+  }
+
+  .calendar-picture {
+    min-height: 12rem;
+  }
+
+  .schedule-list {
+    width: min(100%, 28rem);
+    gap: 0.7rem;
+  }
+
+  .schedule-row,
+  .schedule-row-reverse {
+    gap: 1.35rem;
+  }
+
+  .schedule-connector {
+    height: 6.8rem;
+  }
+
+  .schedule-line {
+    background-size: 434px 612px;
+  }
+
+  .schedule-line-1 {
+    width: 154px;
+    height: 114px;
+    background-position: -161px -23px;
+  }
+
+  .schedule-line-2 {
+    width: 149px;
+    height: 98px;
+    background-position: -160px -39px;
+  }
+
+  .schedule-icon {
+    background-size: 434px 612px;
+  }
+
+  .schedule-icon-suit {
+    width: 84px;
+    height: 116px;
+    background-position: -175px 0;
+  }
+
+  .schedule-icon-dress {
+    width: 102px;
+    height: 110px;
+    background-position: -166px -13px;
+  }
+
+  .schedule-icon-rings {
+    width: 154px;
+    height: 107px;
+    background-position: -140px -14px;
+  }
+
+  .schedule-icon-couple {
+    width: 89px;
+    height: 107px;
+    background-position: -172px -14px;
+  }
+}

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f0df"/>
+      <stop offset="0.45" stop-color="#fffaf0"/>
+      <stop offset="1" stop-color="#d8bd88"/>
+    </linearGradient>
+    <radialGradient id="lightA" cx="22%" cy="12%" r="46%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lightB" cx="84%" cy="10%" r="42%">
+      <stop offset="0" stop-color="#c9ac74" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#c9ac74" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.13"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="2400" fill="url(#paper)"/>
+  <rect width="1600" height="2400" fill="url(#lightA)"/>
+  <rect width="1600" height="2400" fill="url(#lightB)"/>
+  <path d="M-120 680 C 240 520, 420 760, 760 590 S 1290 340, 1740 540" fill="none" stroke="#ffffff" stroke-opacity="0.34" stroke-width="5"/>
+  <path d="M-160 760 C 210 610, 490 810, 800 680 S 1260 520, 1760 700" fill="none" stroke="#8f774f" stroke-opacity="0.13" stroke-width="3"/>
+  <path d="M-110 1710 C 230 1520, 520 1810, 830 1630 S 1300 1410, 1740 1570" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="5"/>
+  <path d="M-180 1820 C 180 1660, 470 1900, 800 1740 S 1270 1590, 1780 1760" fill="none" stroke="#8f774f" stroke-opacity="0.12" stroke-width="3"/>
+  <rect width="1600" height="2400" filter="url(#softNoise)" opacity="0.55"/>
+</svg>
