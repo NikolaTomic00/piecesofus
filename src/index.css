@@ -133,10 +133,11 @@ body {
 .calendar-section {
   display: grid;
   place-items: start center;
-  padding: clamp(0.15rem, 1svh, 0.6rem) 1rem clamp(3rem, 8svh, 5rem);
+  padding: 32px 1rem clamp(3rem, 8svh, 5rem);
 }
 
 .calendar-card {
+  position: relative;
   width: min(100%, 21rem);
   overflow: hidden;
   border: 2px solid var(--invitation-border);
@@ -147,6 +148,7 @@ body {
 
 .calendar-picture {
   position: relative;
+  z-index: 5;
   display: flex;
   min-height: 10.8rem;
   flex-direction: column;
@@ -182,6 +184,8 @@ body {
 }
 
 .calendar-date {
+  position: relative;
+  z-index: 5;
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0.38rem;
