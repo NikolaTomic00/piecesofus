@@ -1,6 +1,11 @@
 function CheckIcon() {
   return (
-    <svg className="rsvp-check-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg
+      className="rsvp-check-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
       <path
         d="M20 6 9 17l-5-5"
         stroke="currentColor"
@@ -35,7 +40,10 @@ export default function RSVPSection() {
           Potvrdi dolazak
         </RSVPButton>
 
-        <span className="rsvp-ornament rsvp-ornament-bottom" aria-hidden="true" />
+        <span
+          className="rsvp-ornament rsvp-ornament-bottom"
+          aria-hidden="true"
+        />
       </div>
     </section>
   );
