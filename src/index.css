@@ -169,18 +169,21 @@ body {
   z-index: 1;
   margin: 0;
   font-family: var(--serif);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
   letter-spacing: 0;
 }
 
 .calendar-picture h2 {
-  font-size: clamp(1.75rem, 8vw, 2.45rem);
+  font-size: clamp(1.18rem, 5.25vw, 1.58rem);
   font-weight: 600;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .calendar-picture h3 {
   margin-top: 0.35rem;
-  font-size: clamp(1.05rem, 4.7vw, 1.35rem);
+  font-size: clamp(1rem, 4.6vw, 1.28rem);
   font-weight: 500;
 }
 

@@ -24,8 +24,7 @@ export default function CalendarSection() {
     <section className="calendar-section" aria-label="Datum vencanja">
       <div className="calendar-card">
         <div className="calendar-picture">
-          <h2>26, Subota</h2>
-          <h3>Septembar 2026.</h3>
+          <h2>26. septembar 2026. godine</h2>
         </div>
 
         <div className="calendar-date" aria-label="Septembar 2026">
