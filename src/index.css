@@ -110,10 +110,10 @@ body {
   z-index: 2;
   margin: clamp(1rem, 3.5vw, 1.4rem) 0 0;
   color: var(--invitation-border);
-  font-family: "Times New Roman", Times, serif;
-  font-size: clamp(1.25rem, 5.55vw, 1.58rem);
-  font-weight: 800;
-  line-height: 1.05;
+  font-family: var(--script);
+  font-size: clamp(3.28rem, 13.6vw, 4.88rem);
+  font-weight: 400;
+  line-height: 0.88;
   letter-spacing: 0;
   text-align: center;
   white-space: nowrap;
@@ -430,7 +430,7 @@ body {
   }
 
   .profile-names {
-    font-size: clamp(1.25rem, 5.55vw, 1.58rem);
+    font-size: clamp(4rem, 8.8vw, 5.6rem);
   }
 
   .profile-invitation-copy {
