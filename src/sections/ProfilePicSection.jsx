@@ -2,7 +2,7 @@ function ProfileImage() {
   return (
     <div className="profile-frame">
       <img
-        src="/profile.jpg"
+        src={`${import.meta.env.BASE_URL}profile.jpg`}
         alt=""
         className="h-full w-full object-cover"
         draggable="false"
@@ -16,7 +16,7 @@ export default function ProfilePicSection() {
     <section className="profile-pic-section" aria-label="Profile picture">
       <img
         className="profile-corner-ornament"
-        src="/1.1.png"
+        src={`${import.meta.env.BASE_URL}1.1.png`}
         alt=""
         draggable="false"
       />

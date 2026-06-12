@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 
 const galleryImages = [
-  { src: "/picture1.jpg", alt: "Fotografija mladenaca 1" },
-  { src: "/picture2.jpg", alt: "Fotografija mladenaca 2" },
-  { src: "/picture3.jpg", alt: "Fotografija mladenaca 3" },
-  { src: "/picture4.jpg", alt: "Fotografija mladenaca 4" },
-  { src: "/picture5.jpg", alt: "Fotografija mladenaca 5" },
+  { src: `${import.meta.env.BASE_URL}picture1.jpg`, alt: "Fotografija mladenaca 1" },
+  { src: `${import.meta.env.BASE_URL}picture2.jpg`, alt: "Fotografija mladenaca 2" },
+  { src: `${import.meta.env.BASE_URL}picture3.jpg`, alt: "Fotografija mladenaca 3" },
+  { src: `${import.meta.env.BASE_URL}picture4.jpg`, alt: "Fotografija mladenaca 4" },
+  { src: `${import.meta.env.BASE_URL}picture5.jpg`, alt: "Fotografija mladenaca 5" },
 ];
 
 export default function GallerySliderSection() {
