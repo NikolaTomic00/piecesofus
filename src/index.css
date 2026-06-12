@@ -537,7 +537,7 @@ body {
 .gallery-slider-section {
   display: grid;
   place-items: start center;
-  padding: clamp(0.2rem, 1.5svh, 0.8rem) 1rem clamp(3.5rem, 8svh, 5rem);
+  padding: clamp(0.2rem, 1.5svh, 0.8rem) 1rem 48px;
 }
 
 .gallery-slider {
@@ -599,6 +599,111 @@ body {
 .gallery-slider-dot-active {
   background: var(--invitation-border);
   transform: scale(1.16);
+}
+
+.rsvp-section {
+  display: grid;
+  place-items: start center;
+  padding: clamp(12px, 3svh, 30px) clamp(16px, 4vw, 28px)
+    clamp(48px, 9svh, 84px);
+}
+
+.rsvp-inner {
+  display: grid;
+  justify-items: center;
+  width: min(100%, 430px);
+  color: var(--invitation-border);
+  text-align: center;
+}
+
+.rsvp-text {
+  max-width: 330px;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(19px, 5vw, 23px);
+  line-height: 1.32;
+}
+
+.rsvp-ornament {
+  display: block;
+  width: min(100%, 286px);
+  height: 20px;
+  background-repeat: no-repeat;
+}
+
+.rsvp-ornament-top {
+  margin-top: clamp(28px, 7vw, 42px);
+  margin-bottom: clamp(16px, 4vw, 24px);
+  background-image: url("/rsvptop.png");
+  background-position: -50px -29px;
+  background-size: 386px 544px;
+}
+
+.rsvp-ornament-bottom {
+  margin-top: clamp(16px, 4vw, 24px);
+  background-image: url("/rsvpbottom.png");
+  background-position: -50px -38px;
+  background-size: 386px 544px;
+}
+
+.rsvp-button {
+  position: relative;
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  border-radius: 999px;
+  background: #7b6e6a;
+  padding: 14px 28px;
+  color: #fff;
+  font-family: "Geist", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 12px 24px rgba(80, 72, 58, 0.1);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.rsvp-button:hover,
+.rsvp-button:focus-visible {
+  background: #6d625e;
+}
+
+.rsvp-button-pulse {
+  animation: rsvp-button-pulse 2s infinite;
+}
+
+@keyframes rsvp-button-pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.rsvp-button-content {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.rsvp-check-icon {
+  width: 16px;
+  height: 16px;
 }
 
 @media (min-width: 640px) {
