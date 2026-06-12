@@ -1,6 +1,7 @@
 import ProfilePicSection from "./sections/ProfilePicSection.jsx";
 import CalendarSection from "./sections/CalendarSection.jsx";
 import CountdownSection from "./sections/CountdownSection.jsx";
+import GallerySliderSection from "./sections/GallerySliderSection.jsx";
 import ScheduleSection from "./sections/ScheduleSection.jsx";
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
       <CalendarSection />
       <ScheduleSection />
       <CountdownSection />
+      <GallerySliderSection />
     </main>
   );
 }

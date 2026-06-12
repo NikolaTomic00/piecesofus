@@ -3,19 +3,23 @@ import { useEffect, useState } from 'react';
 const weddingDate = new Date('2026-09-26T00:00:00+02:00').getTime();
 
 function getTimeLeft() {
-  const difference = Math.max(0, weddingDate - Date.now());
-  const days = Math.floor(difference / 86400000);
-  const hours = Math.floor((difference / 3600000) % 24);
-  const minutes = Math.floor((difference / 60000) % 60);
-  const seconds = Math.floor((difference / 1000) % 60);
+  const difference = Math.max(weddingDate - Date.now(), 0);
 
-  return { days, hours, minutes, seconds };
+  return {
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((difference / (1000 * 60)) % 60),
+    seconds: Math.floor((difference / 1000) % 60),
+  };
 }
 
-function TimeBlock({ label, value, minDigits = 2 }) {
+function CountdownBox({ value, label }) {
   return (
-    <div className="countdown-block">
-      <span className="countdown-value">{String(value).padStart(minDigits, '0')}</span>
+    <div className="countdown-box">
+      <div className="countdown-value">
+        <span className="countdown-scan" aria-hidden="true" />
+        <span>{String(value).padStart(2, '0')}</span>
+      </div>
       <span className="countdown-label">{label}</span>
     </div>
   );
@@ -25,15 +29,22 @@ export default function CountdownSection() {
   const [timeLeft, setTimeLeft] = useState(() => getTimeLeft());
 
   useEffect(() => {
-    const countdownInterval = window.setInterval(() => {
+    const timer = window.setInterval(() => {
       setTimeLeft(getTimeLeft());
     }, 1000);
 
-    return () => window.clearInterval(countdownInterval);
+    return () => window.clearInterval(timer);
   }, []);
 
+  const countdownItems = [
+    ['days', 'Dana'],
+    ['hours', 'Sati'],
+    ['minutes', 'Min'],
+    ['seconds', 'Sek'],
+  ];
+
   return (
-    <section className="countdown-section" aria-label="Odbrojavanje do vencanja">
+    <section className="countdown-section" aria-label="Countdown">
       <div className="countdown-inner">
         <div className="countdown-date-row">
           <span />
@@ -41,13 +52,12 @@ export default function CountdownSection() {
           <span />
         </div>
 
-        <h2 className="countdown-heading">Brojimo zajedno</h2>
+        <p className="countdown-title">Brojimo zajedno</p>
 
-        <div className="countdown-timer" role="timer" aria-live="polite">
-          <TimeBlock label="Dani" value={timeLeft.days} minDigits={timeLeft.days > 99 ? 3 : 2} />
-          <TimeBlock label="Sati" value={timeLeft.hours} />
-          <TimeBlock label="Min" value={timeLeft.minutes} />
-          <TimeBlock label="Sek" value={timeLeft.seconds} />
+        <div className="countdown-grid" role="timer" aria-live="polite">
+          {countdownItems.map(([key, label]) => (
+            <CountdownBox key={key} value={timeLeft[key]} label={label} />
+          ))}
         </div>
       </div>
     </section>
