@@ -1,24 +1,51 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 const galleryImages = [
-  { src: '/picture1.jpg', alt: 'Fotografija mladenaca 1' },
-  { src: '/picture2.jpg', alt: 'Fotografija mladenaca 2' },
-  { src: '/picture3.jpg', alt: 'Fotografija mladenaca 3' },
-  { src: '/picture4.jpg', alt: 'Fotografija mladenaca 4' },
-  { src: '/picture5.jpg', alt: 'Fotografija mladenaca 5' },
+  { src: "/picture1.jpg", alt: "Fotografija mladenaca 1" },
+  { src: "/picture2.jpg", alt: "Fotografija mladenaca 2" },
+  { src: "/picture3.jpg", alt: "Fotografija mladenaca 3" },
+  { src: "/picture4.jpg", alt: "Fotografija mladenaca 4" },
+  { src: "/picture5.jpg", alt: "Fotografija mladenaca 5" },
 ];
 
 export default function GallerySliderSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
   const touchStartX = useRef(null);
 
   useEffect(() => {
+    const currentSection = sectionRef.current;
+
+    if (!currentSection) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.35 },
+    );
+
+    observer.observe(currentSection);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) {
+      return undefined;
+    }
+
     const sliderTimer = window.setInterval(() => {
-      setActiveIndex((currentIndex) => (currentIndex + 1) % galleryImages.length);
-    }, 4200);
+      setActiveIndex(
+        (currentIndex) => (currentIndex + 1) % galleryImages.length,
+      );
+    }, 2000);
 
     return () => window.clearInterval(sliderTimer);
-  }, []);
+  }, [isVisible]);
 
   const goToPrevious = () => {
     setActiveIndex((currentIndex) =>
@@ -54,7 +81,11 @@ export default function GallerySliderSection() {
   };
 
   return (
-    <section className="gallery-slider-section" aria-label="Galerija fotografija">
+    <section
+      className="gallery-slider-section"
+      aria-label="Galerija fotografija"
+      ref={sectionRef}
+    >
       <div className="gallery-slider">
         <div
           className="gallery-slider-viewport"
@@ -64,7 +95,7 @@ export default function GallerySliderSection() {
           {galleryImages.map((image, index) => (
             <img
               className={`gallery-slider-image${
-                index === activeIndex ? ' gallery-slider-image-active' : ''
+                index === activeIndex ? " gallery-slider-image-active" : ""
               }`}
               src={image.src}
               alt={image.alt}
@@ -78,7 +109,7 @@ export default function GallerySliderSection() {
           {galleryImages.map((image, index) => (
             <button
               className={`gallery-slider-dot${
-                index === activeIndex ? ' gallery-slider-dot-active' : ''
+                index === activeIndex ? " gallery-slider-dot-active" : ""
               }`}
               type="button"
               onClick={() => setActiveIndex(index)}

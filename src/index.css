@@ -279,7 +279,7 @@ body {
 .countdown-section {
   display: grid;
   place-items: start center;
-  padding: clamp(10px, 3svh, 26px) clamp(16px, 4vw, 28px)
+  padding: 32px clamp(16px, 4vw, 28px)
     clamp(42px, 8svh, 76px);
 }
 
@@ -390,7 +390,7 @@ body {
 .schedule-section {
   display: grid;
   place-items: start center;
-  padding: clamp(0.5rem, 2svh, 1rem) 1rem clamp(3.4rem, 8svh, 5.25rem);
+  padding: clamp(0.5rem, 2svh, 1rem) 1rem 48px;
 }
 
 .schedule-list {
