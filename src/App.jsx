@@ -1,6 +1,7 @@
-import ProfilePicSection from './sections/ProfilePicSection.jsx';
-import CalendarSection from './sections/CalendarSection.jsx';
-import ScheduleSection from './sections/ScheduleSection.jsx';
+import ProfilePicSection from "./sections/ProfilePicSection.jsx";
+import CalendarSection from "./sections/CalendarSection.jsx";
+import CountdownSection from "./sections/CountdownSection.jsx";
+import ScheduleSection from "./sections/ScheduleSection.jsx";
 
 export default function App() {
   return (
@@ -8,6 +9,7 @@ export default function App() {
       <ProfilePicSection />
       <CalendarSection />
       <ScheduleSection />
+      <CountdownSection />
     </main>
   );
 }

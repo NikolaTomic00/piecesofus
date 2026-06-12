@@ -26,7 +26,8 @@
   --frame-gold: #b68d48;
   --invitation-text: #5f5552;
   --serif: "Cormorant Garamond", Georgia, serif;
-  --script: "Edwardian Script ITC", "Bickham Script Pro", "Great Vibes", cursive;
+  --script:
+    "Edwardian Script ITC", "Bickham Script Pro", "Great Vibes", cursive;
   color-scheme: light;
   color: var(--invitation-text);
   background: var(--invitation-bg);
@@ -51,7 +52,7 @@ body {
 
 .invitation-bg {
   background-color: var(--invitation-bg);
-  background-image: url('/background.png');
+  background-image: url("/background.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -158,7 +159,7 @@ body {
   color: #fffaf2;
   background:
     linear-gradient(to top, rgba(43, 33, 22, 0.62), rgba(43, 33, 22, 0.16)),
-    url('/weddingring.jpg') center / cover no-repeat;
+    url("/weddingring.jpg") center / cover no-repeat;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
 }
 
@@ -265,6 +266,121 @@ body {
   }
 }
 
+.countdown-section {
+  display: grid;
+  place-items: start center;
+  padding: clamp(10px, 3svh, 26px) clamp(16px, 4vw, 28px)
+    clamp(42px, 8svh, 76px);
+  color: var(--invitation-border);
+  text-align: center;
+}
+
+.countdown-inner {
+  width: min(100%, 430px);
+}
+
+.countdown-date-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 352px;
+  margin: 0 auto;
+}
+
+.countdown-date-row span {
+  height: 1px;
+  flex: 1;
+  background: #7b6e6a;
+}
+
+.countdown-date-row p {
+  margin: 0;
+  white-space: nowrap;
+  color: #7b6e6a;
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(22px, 6vw, 30px);
+  font-style: italic;
+  line-height: 1;
+}
+
+.countdown-heading {
+  margin: 28px 0 0;
+  white-space: nowrap;
+  color: var(--invitation-border);
+  font-family: "Edwardian Script ITC", cursive;
+  font-size: clamp(45px, 17vw, 60px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.countdown-timer {
+  display: flex;
+  width: min(100%, 430px);
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: clamp(5px, 2vw, 10px);
+  margin: 30px auto 0;
+}
+
+.countdown-block {
+  display: flex;
+  width: clamp(60px, 20vw, 75px);
+  height: clamp(68px, 21vw, 80px);
+  flex: 0 1 clamp(60px, 20vw, 75px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(7px, 2.2vw, 9px) 0;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(107, 90, 66, 0.18);
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(53, 43, 30, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.countdown-block:hover {
+  transform: translateY(-5px);
+}
+
+.countdown-block::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px 2px 0 0;
+  background: linear-gradient(
+    90deg,
+    var(--frame-gold),
+    var(--invitation-border)
+  );
+}
+
+.countdown-value {
+  margin-top: 5px;
+  color: var(--invitation-border);
+  font-family: "Geist", Arial, sans-serif;
+  font-size: clamp(1.45rem, 6.2vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.countdown-label {
+  margin-top: 7px;
+  color: var(--invitation-border);
+  font-family: "Geist", Arial, sans-serif;
+  font-size: clamp(0.62rem, 2.6vw, 0.8rem);
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
 .schedule-section {
   display: grid;
   place-items: start center;
@@ -353,28 +469,28 @@ body {
 .schedule-icon-suit {
   width: 72px;
   height: 99px;
-  background-image: url('/3.1.png');
+  background-image: url("/3.1.png");
   background-position: -150px 0;
 }
 
 .schedule-icon-dress {
   width: 88px;
   height: 95px;
-  background-image: url('/3.2.png');
+  background-image: url("/3.2.png");
   background-position: -142px -11px;
 }
 
 .schedule-icon-rings {
   width: 132px;
   height: 92px;
-  background-image: url('/3.3.png');
+  background-image: url("/3.3.png");
   background-position: -120px -12px;
 }
 
 .schedule-icon-couple {
   width: 76px;
   height: 92px;
-  background-image: url('/3.4.png');
+  background-image: url("/3.4.png");
   background-position: -148px -12px;
 }
 
@@ -398,14 +514,14 @@ body {
 .schedule-line-1 {
   width: 132px;
   height: 98px;
-  background-image: url('/3.line1.png');
+  background-image: url("/3.line1.png");
   background-position: -138px -20px;
 }
 
 .schedule-line-2 {
   width: 128px;
   height: 84px;
-  background-image: url('/3.line2.png');
+  background-image: url("/3.line2.png");
   background-position: -137px -33px;
 }
 
@@ -444,6 +560,10 @@ body {
 
   .calendar-picture {
     min-height: 12rem;
+  }
+
+  .countdown-timer {
+    gap: 10px;
   }
 
   .schedule-list {
