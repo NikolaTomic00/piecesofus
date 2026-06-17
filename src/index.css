@@ -566,7 +566,7 @@ p {
 }
 
 .gallery-slider {
-  width: min(100%, 21rem);
+  width: min(100%, 15.75rem);
 }
 
 .gallery-slider-viewport {
@@ -761,7 +761,7 @@ p {
   }
 
   .gallery-slider {
-    width: min(100%, 24rem);
+    width: min(100%, 18rem);
   }
 
   .schedule-list {
