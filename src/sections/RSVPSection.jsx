@@ -19,7 +19,7 @@ function CheckIcon() {
 
 function RSVPButton({ children, href }) {
   return (
-    <a className="rsvp-button rsvp-button-pulse" href={href}>
+    <a className="rsvp-button rsvp-button-pulse text-[0.875rem]" href={href}>
       <span className="rsvp-button-content">{children}</span>
     </a>
   );
@@ -29,7 +29,7 @@ export default function RSVPSection() {
   return (
     <section className="rsvp-section" aria-label="RSVP">
       <div className="rsvp-inner">
-        <p className="rsvp-text">
+        <p className="rsvp-text text-[1.125rem]">
           Molimo vas da potvrdite dolazak klikom na dugme ispod.
         </p>
 

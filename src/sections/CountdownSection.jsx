@@ -18,9 +18,11 @@ function CountdownBox({ value, label }) {
     <div className="countdown-box">
       <div className="countdown-value">
         <span className="countdown-scan" aria-hidden="true" />
-        <span>{String(value).padStart(2, '0')}</span>
+        <span className="text-[1.5rem]">{String(value).padStart(2, '0')}</span>
       </div>
-      <span className="countdown-label">{label}</span>
+      <span className="countdown-label text-[0.625rem] sm:text-[0.75rem]">
+        {label}
+      </span>
     </div>
   );
 }
@@ -48,11 +50,11 @@ export default function CountdownSection() {
       <div className="countdown-inner">
         <div className="countdown-date-row">
           <span />
-          <p>26/09/2026</p>
+        <p className="text-[1.125rem]">26/09/2026</p>
           <span />
         </div>
 
-        <p className="countdown-title">Brojimo zajedno</p>
+        <p className="countdown-title text-[3rem]">Brojimo zajedno</p>
 
         <div className="countdown-grid" role="timer" aria-live="polite">
           {countdownItems.map(([key, label]) => (

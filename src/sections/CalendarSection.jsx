@@ -24,19 +24,24 @@ export default function CalendarSection() {
     <section className="calendar-section" aria-label="Datum vencanja">
       <div className="calendar-card">
         <div className="calendar-picture">
-          <h2>26. septembar 2026.</h2>
+          <h2 className="font-['Allura',cursive] text-[1.5rem] font-normal">
+            26. septembar 2026.
+          </h2>
         </div>
 
         <div className="calendar-date" aria-label="Septembar 2026">
           {weekdays.map((weekday, index) => (
-            <div className="calendar-day" key={`${weekday}-${index}`}>
+            <div
+              className="calendar-day text-[0.92rem]"
+              key={`${weekday}-${index}`}
+            >
               {weekday}
             </div>
           ))}
 
           {calendarCells.map(({ key, day, isSelected }) => (
             <div
-              className={`calendar-number${isSelected ? " calendar-number-current" : ""}`}
+              className={`calendar-number text-[0.92rem]${isSelected ? " calendar-number-current" : ""}`}
               key={key}
             >
               {isSelected ? (

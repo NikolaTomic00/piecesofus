@@ -35,10 +35,17 @@ const scheduleItems = [
 function ScheduleText({ title, place, time, mapUrl }) {
   return (
     <div className="schedule-copy">
-      <h2>{title}</h2>
-      <p>{place}</p>
-      <strong>{time}</strong>
-      <a href={mapUrl} target="_blank" rel="noreferrer">
+      <h2 className="font-['Allura',cursive] text-[1.5rem] font-normal">
+        {title}
+      </h2>
+      <p className="text-[1.125rem]">{place}</p>
+      <strong className="text-[1.12rem]">{time}</strong>
+      <a
+        className="text-[0.78rem]"
+        href={mapUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
         Pogledaj na mapi
       </a>
     </div>

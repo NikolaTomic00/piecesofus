@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Geist:wght@400;500;600;700&family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Cormorant+Infant:ital,wght@1,400;1,500;1,600;1,700&family=Geist:wght@400;500;600;700&family=Great+Vibes&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -26,6 +26,7 @@
   --frame-gold: #b68d48;
   --invitation-text: #5f5552;
   --serif: "Cormorant Garamond", Georgia, serif;
+  --paragraph: "Cormorant Infant", Georgia, serif;
   --script:
     "Edwardian Script ITC", "Bickham Script Pro", "Great Vibes", cursive;
   color-scheme: light;
@@ -48,6 +49,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background: var(--invitation-bg);
+}
+
+p {
+  font-family: var(--paragraph);
 }
 
 .invitation-bg {
@@ -111,8 +116,8 @@ body {
   z-index: 2;
   margin: clamp(1rem, 3.5vw, 1.4rem) 0 0;
   color: var(--invitation-border);
-  font-family: var(--script);
-  font-size: clamp(3.28rem, 13.6vw, 4.88rem);
+  font-family: "Allura", cursive;
+  font-style: normal;
   font-weight: 400;
   line-height: 0.88;
   letter-spacing: 0;
@@ -124,8 +129,6 @@ body {
   width: min(100%, 21rem);
   margin: clamp(1rem, 3.8vw, 1.5rem) 0 0;
   color: var(--invitation-border);
-  font-family: "Times New Roman", Times, serif;
-  font-size: clamp(0.92rem, 4.05vw, 1.06rem);
   font-weight: 400;
   line-height: 1.18;
   text-align: center;
@@ -168,14 +171,12 @@ body {
   position: relative;
   z-index: 1;
   margin: 0;
-  font-family: var(--serif);
   font-variant-numeric: lining-nums tabular-nums;
   font-feature-settings: "lnum" 1, "tnum" 1;
   letter-spacing: 0;
 }
 
 .calendar-picture h2 {
-  font-size: clamp(1.18rem, 5.25vw, 1.58rem);
   font-weight: 600;
   line-height: 1;
   white-space: nowrap;
@@ -183,7 +184,6 @@ body {
 
 .calendar-picture h3 {
   margin-top: 0.35rem;
-  font-size: clamp(1rem, 4.6vw, 1.28rem);
   font-weight: 500;
 }
 
@@ -206,7 +206,6 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  font-size: clamp(0.92rem, 4.1vw, 1.05rem);
   line-height: 1;
 }
 
@@ -313,9 +312,6 @@ body {
   margin: 0;
   white-space: nowrap;
   color: var(--countdown-border);
-  font-family: "Times New Roman", Times, serif;
-  font-size: clamp(22px, 6vw, 30px);
-  font-style: italic;
   line-height: 1;
 }
 
@@ -323,8 +319,8 @@ body {
   margin: 28px 0 0;
   white-space: nowrap;
   color: var(--countdown-border);
-  font-family: "Edwardian Script ITC", cursive;
-  font-size: clamp(45px, 17vw, 60px);
+  font-family: "Allura", cursive;
+  font-style: normal;
   line-height: 1;
 }
 
@@ -361,7 +357,6 @@ body {
 .countdown-value > span:last-child {
   color: var(--countdown-border);
   font-family: "Geist", Arial, sans-serif;
-  font-size: clamp(24px, 7vw, 38px);
   font-weight: 700;
   line-height: 1;
 }
@@ -384,7 +379,6 @@ body {
 .countdown-label {
   color: var(--countdown-border);
   font-family: "Geist", Arial, sans-serif;
-  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -420,13 +414,11 @@ body {
 
 .schedule-copy {
   color: var(--invitation-border);
-  font-family: "Times New Roman", Times, serif;
   text-align: center;
 }
 
 .schedule-copy h2 {
   margin: 0;
-  font-size: clamp(1.25rem, 5.55vw, 1.58rem);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: 0;
@@ -434,7 +426,6 @@ body {
 
 .schedule-copy p {
   margin: 0.35rem 0 0;
-  font-size: clamp(0.92rem, 4.05vw, 1.06rem);
   font-weight: 400;
   line-height: 1.18;
 }
@@ -442,7 +433,6 @@ body {
 .schedule-copy strong {
   display: block;
   margin-top: 0.35rem;
-  font-size: clamp(1.12rem, 5vw, 1.38rem);
   font-weight: 800;
   line-height: 1;
 }
@@ -451,7 +441,6 @@ body {
   display: inline-block;
   margin-top: 0.45rem;
   color: var(--invitation-border);
-  font-size: clamp(0.78rem, 3.4vw, 0.9rem);
   font-weight: 700;
   line-height: 1.1;
   text-decoration: underline;
@@ -619,8 +608,6 @@ body {
 .rsvp-text {
   max-width: 330px;
   margin: 0;
-  font-family: "Times New Roman", Times, serif;
-  font-size: clamp(19px, 5vw, 23px);
   line-height: 1.32;
 }
 
@@ -658,7 +645,6 @@ body {
   padding: 14px 28px;
   color: #fff;
   font-family: "Geist", Arial, sans-serif;
-  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-decoration: none;
@@ -726,13 +712,8 @@ body {
     border-radius: calc(2rem - 6px);
   }
 
-  .profile-names {
-    font-size: clamp(4rem, 8.8vw, 5.6rem);
-  }
-
   .profile-invitation-copy {
     width: min(100%, 24rem);
-    font-size: clamp(0.92rem, 4.05vw, 1.06rem);
   }
 
   .calendar-card {
