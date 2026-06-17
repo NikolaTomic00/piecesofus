@@ -35,13 +35,13 @@ const scheduleItems = [
 function ScheduleText({ title, place, time, mapUrl }) {
   return (
     <div className="schedule-copy">
-      <h2 className="font-['Allura',cursive] text-[1.5rem] font-normal">
+      <h2 className="font-['Allura',cursive] text-[2rem] font-normal">
         {title}
       </h2>
       <p className="text-[1.125rem]">{place}</p>
-      <strong className="text-[1.12rem]">{time}</strong>
+      <strong className="font-['Cormorant_Infant',Georgia,serif] text-[1.75rem]">{time}</strong>
       <a
-        className="text-[0.78rem]"
+        className="font-['Cormorant_Infant',Georgia,serif] text-[0.78rem]"
         href={mapUrl}
         target="_blank"
         rel="noreferrer"
