@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Cormorant+Infant:ital,wght@1,400;1,500;1,600;1,700&family=Geist:wght@400;500;600;700&family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Cormorant+Infant:ital,wght@1,400;1,500;1,600;1,700&family=Geist:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -116,11 +116,12 @@ p {
   z-index: 2;
   margin: clamp(1rem, 3.5vw, 1.4rem) 0 0;
   color: var(--invitation-border);
-  font-family: "Allura", cursive;
-  font-style: normal;
+  font-family: "Playfair Display", sans-serif;
+  font-size: 32px;
+  font-style: italic;
   font-weight: 400;
-  line-height: 0.88;
-  letter-spacing: 0;
+  line-height: 1.21;
+  letter-spacing: 0.03em;
   text-align: center;
   white-space: nowrap;
   animation: name-reveal 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -174,7 +175,9 @@ p {
   z-index: 1;
   margin: 0;
   font-variant-numeric: lining-nums tabular-nums;
-  font-feature-settings: "lnum" 1, "tnum" 1;
+  font-feature-settings:
+    "lnum" 1,
+    "tnum" 1;
   letter-spacing: 0;
 }
 
@@ -317,8 +320,7 @@ p {
 .countdown-section {
   display: grid;
   place-items: start center;
-  padding: 32px clamp(16px, 4vw, 28px)
-    clamp(42px, 8svh, 76px);
+  padding: 32px clamp(16px, 4vw, 28px) clamp(42px, 8svh, 76px);
 }
 
 .countdown-inner {
@@ -377,47 +379,25 @@ p {
 }
 
 .countdown-value {
-  position: relative;
   display: flex;
   width: 100%;
-  aspect-ratio: 1;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  border: 1px solid rgba(123, 110, 106, 0.55);
-  border-radius: 8px;
-  background: #f3eeec;
-  box-shadow: 0 12px 24px rgba(80, 72, 58, 0.08);
-}
-
-.countdown-value > span:last-child {
   color: var(--countdown-border);
-  font-family: "Geist", Arial, sans-serif;
-  font-weight: 700;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 32px;
+  font-weight: 500;
   line-height: 1;
-}
-
-.countdown-scan {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 1px;
-  width: 50%;
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--countdown-border),
-    transparent
-  );
-  animation: countdown-scan 2.4s linear infinite;
 }
 
 .countdown-label {
   color: var(--countdown-border);
-  font-family: "Geist", Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-family: var(--paragraph);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: lowercase;
 }
 
 .schedule-section {
@@ -672,16 +652,17 @@ p {
 .rsvp-button {
   position: relative;
   display: inline-flex;
-  min-height: 52px;
+  min-height: 42px;
   align-items: center;
   justify-content: center;
   overflow: visible;
   border-radius: 999px;
   background: #7b6e6a;
-  padding: 14px 28px;
+  padding: 10px 24px;
   color: #fff;
+  font-size: 12px;
   font-family: var(--paragraph);
-  font-weight: 700;
+  font-weight: 300;
   letter-spacing: 0.08em;
   text-decoration: none;
   text-transform: uppercase;

@@ -23,9 +23,7 @@ export default function ProfilePicSection() {
 
       <div className="profile-pic-content">
         <ProfileImage />
-        <h1 className="profile-names text-[3rem]">
-          Ivana i Aleksa
-        </h1>
+        <h1 className="profile-names text-[3rem]">Ivana & Aleksa</h1>
         <p className="profile-invitation-copy text-[1.125rem]">
           Sa radošću vas pozivamo da budete deo našeg venčanja i podelite sa
           nama dan naše najveće sreće.

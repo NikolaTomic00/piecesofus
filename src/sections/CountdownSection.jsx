@@ -17,12 +17,9 @@ function CountdownBox({ value, label }) {
   return (
     <div className="countdown-box">
       <div className="countdown-value">
-        <span className="countdown-scan" aria-hidden="true" />
-        <span className="text-[1.5rem]">{String(value).padStart(2, '0')}</span>
+        <span>{String(value).padStart(2, '0')}</span>
       </div>
-      <span className="countdown-label text-[0.625rem] sm:text-[0.75rem]">
-        {label}
-      </span>
+      <span className="countdown-label">{label}</span>
     </div>
   );
 }
@@ -39,10 +36,10 @@ export default function CountdownSection() {
   }, []);
 
   const countdownItems = [
-    ['days', 'Dana'],
-    ['hours', 'Sati'],
-    ['minutes', 'Min'],
-    ['seconds', 'Sek'],
+    ['days', 'dani'],
+    ['hours', 'sati'],
+    ['minutes', 'minuti'],
+    ['seconds', 'sekunde'],
   ];
 
   return (
