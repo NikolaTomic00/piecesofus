@@ -29,7 +29,9 @@ export default function RSVPSection() {
   return (
     <section className="rsvp-section" aria-label="RSVP">
       <div className="rsvp-inner">
-        <p className="rsvp-text text-[1.125rem]">
+        <h2 className="rsvp-title">Radujemo se vašem dolasku</h2>
+
+        <p className="rsvp-text text-[1rem]">
           Molimo vas da potvrdite dolazak klikom na dugme ispod.
         </p>
 

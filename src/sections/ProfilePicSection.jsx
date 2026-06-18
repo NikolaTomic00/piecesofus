@@ -23,11 +23,15 @@ export default function ProfilePicSection() {
 
       <div className="profile-pic-content">
         <ProfileImage />
-        <h1 className="profile-names text-[3rem]">Ivana & Aleksa</h1>
-        <p className="profile-invitation-copy text-[1.125rem]">
+        <h1 className="profile-names">Ivana & Aleksa</h1>
+        <p className="profile-invitation-copy text-[1rem]">
           Sa radošću vas pozivamo da budete deo našeg venčanja i podelite sa
           nama dan naše najveće sreće.
         </p>
+
+        <p className="profile-event-date">26. SEPTEMBAR 2026.</p>
+        <p className="profile-event-location">Hotel Sheraton</p>
+        <p className="profile-event-location">Novi Sad, Srbija</p>
       </div>
     </section>
   );

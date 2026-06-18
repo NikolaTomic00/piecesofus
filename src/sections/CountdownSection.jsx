@@ -51,7 +51,7 @@ export default function CountdownSection() {
           <span />
         </div>
 
-        <p className="countdown-title text-[3rem]">Brojimo zajedno</p>
+        <p className="countdown-title">Do našeg velikog dana</p>
 
         <div className="countdown-grid" role="timer" aria-live="polite">
           {countdownItems.map(([key, label]) => (

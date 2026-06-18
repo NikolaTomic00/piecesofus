@@ -24,7 +24,7 @@ export default function CalendarSection() {
     <section className="calendar-section" aria-label="Datum vencanja">
       <div className="calendar-card">
         <div className="calendar-picture">
-          <h2 className="font-['Allura',cursive] text-[1.5rem] font-normal">
+          <h2 className="font-['Poiret_One',sans-serif] text-[1.5rem] font-normal">
             26. septembar 2026.
           </h2>
         </div>
