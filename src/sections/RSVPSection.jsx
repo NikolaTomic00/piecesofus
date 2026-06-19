@@ -11,7 +11,7 @@ function CheckIcon() {
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="2.4"
+        strokeWidth="1.7"
       />
     </svg>
   );
@@ -19,7 +19,7 @@ function CheckIcon() {
 
 function RSVPButton({ children, href }) {
   return (
-    <a className="rsvp-button rsvp-button-pulse text-[0.875rem]" href={href}>
+    <a className="rsvp-button" href={href}>
       <span className="rsvp-button-content">{children}</span>
     </a>
   );

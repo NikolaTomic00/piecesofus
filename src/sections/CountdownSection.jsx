@@ -47,7 +47,7 @@ export default function CountdownSection() {
       <div className="countdown-inner">
         <div className="countdown-date-row">
           <span />
-          <p className="text-[1.5rem]">26/09/2026</p>
+          <p>26 / 09 / 2026</p>
           <span />
         </div>
 
