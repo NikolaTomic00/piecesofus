@@ -904,18 +904,19 @@ p {
   right: -2px;
   bottom: -1px;
   left: -2px;
-  height: clamp(3.25rem, 7svh, 4.75rem);
+  height: clamp(4rem, 8svh, 5.25rem);
   background-color: var(--invitation-bg);
   background-image: url("/timelesslove/background.png");
   background-position: center;
   background-size: cover;
   clip-path: polygon(
-    0 61%, 10% 54%, 20% 66%, 30% 50%, 40% 62%, 50% 48%,
-    60% 63%, 70% 51%, 80% 66%, 90% 53%, 100% 61%,
+    0 74%, 8% 71%, 17% 76%, 27% 69%, 38% 72%,
+    49% 64%, 59% 67%, 68% 56%, 77% 59%, 86% 43%,
+    93% 47%, 100% 36%,
     100% 100%, 0 100%
   );
   content: "";
-  filter: drop-shadow(0 -2px 1px rgba(255, 250, 240, 0.26));
+  filter: drop-shadow(0 -1px 0 rgba(255, 250, 240, 0.2));
   pointer-events: none;
 }
 
