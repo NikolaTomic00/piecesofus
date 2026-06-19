@@ -863,3 +863,100 @@ p {
     filter: none;
   }
 }
+
+/* Full-screen cover with a hand-torn, scraped lower edge. */
+.profile-pic-section {
+  padding: 0 0 clamp(0.9rem, 2.5svh, 1.4rem);
+}
+
+.profile-corner-ornament {
+  z-index: 4;
+}
+
+.profile-frame {
+  width: 100%;
+  height: 52svh;
+  min-height: 26rem;
+  aspect-ratio: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  isolation: isolate;
+}
+
+.profile-frame::before {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 20, 13, 0.03) 42%,
+    rgba(30, 20, 13, 0.18) 68%,
+    rgba(30, 20, 13, 0.6) 100%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.profile-frame::after {
+  position: absolute;
+  z-index: 4;
+  right: -2px;
+  bottom: -1px;
+  left: -2px;
+  height: clamp(3.25rem, 7svh, 4.75rem);
+  background-color: var(--invitation-bg);
+  background-image: url("/timelesslove/background.png");
+  background-position: center;
+  background-size: cover;
+  clip-path: polygon(
+    0 61%, 10% 54%, 20% 66%, 30% 50%, 40% 62%, 50% 48%,
+    60% 63%, 70% 51%, 80% 66%, 90% 53%, 100% 61%,
+    100% 100%, 0 100%
+  );
+  content: "";
+  filter: drop-shadow(0 -2px 1px rgba(255, 250, 240, 0.26));
+  pointer-events: none;
+}
+
+.profile-frame img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: 50% center;
+}
+
+.profile-names {
+  position: absolute;
+  z-index: 3;
+  right: 1rem;
+  bottom: clamp(4rem, 8svh, 5.75rem);
+  left: 1rem;
+  margin: 0;
+  color: #fffaf2;
+  font-size: clamp(3rem, 13vw, 4.4rem);
+  text-shadow: 0 3px 18px rgba(28, 18, 12, 0.52);
+}
+
+.profile-invitation-copy {
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .profile-pic-section {
+    padding-top: 0;
+  }
+
+  .profile-frame {
+    width: 100%;
+    height: min(62svh, 38rem);
+    border: 0;
+    border-radius: 0;
+  }
+
+  .profile-frame img {
+    border-radius: 0;
+  }
+}

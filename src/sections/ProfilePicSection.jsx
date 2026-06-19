@@ -7,6 +7,7 @@ function ProfileImage() {
         className="h-full w-full object-cover"
         draggable="false"
       />
+      <h1 className="profile-names">Ivana &amp; Aleksa</h1>
     </div>
   );
 }
@@ -23,7 +24,6 @@ export default function ProfilePicSection() {
 
       <div className="profile-pic-content">
         <ProfileImage />
-        <h1 className="profile-names">Ivana & Aleksa</h1>
         <p className="profile-invitation-copy text-[1rem]">
           Sa radošću vas pozivamo da budete deo našeg venčanja i podelite sa
           nama dan naše najveće sreće.
