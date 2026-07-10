@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-const weddingDate = new Date('2026-09-26T00:00:00+02:00').getTime();
+const weddingDate = new Date("2026-09-26T00:00:00+02:00").getTime();
 
 function getTimeLeft() {
   const difference = Math.max(weddingDate - Date.now(), 0);
@@ -16,16 +16,14 @@ function getTimeLeft() {
 function CountdownBox({ value, label }) {
   return (
     <div className="countdown-box">
-      <div className="countdown-value">
-        <span>{String(value).padStart(2, '0')}</span>
-      </div>
+      <span className="countdown-value">{String(value).padStart(2, "0")}</span>
       <span className="countdown-label">{label}</span>
     </div>
   );
 }
 
 export default function CountdownSection() {
-  const [timeLeft, setTimeLeft] = useState(() => getTimeLeft());
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -36,22 +34,16 @@ export default function CountdownSection() {
   }, []);
 
   const countdownItems = [
-    ['days', 'dani'],
-    ['hours', 'sati'],
-    ['minutes', 'minuti'],
-    ['seconds', 'sekunde'],
+    ["days", "dani"],
+    ["hours", "sati"],
+    ["minutes", "minuti"],
+    ["seconds", "sekunde"],
   ];
 
   return (
     <section className="countdown-section" aria-label="Countdown">
       <div className="countdown-inner">
-        <div className="countdown-date-row">
-          <span />
-          <p>26 / 09 / 2026</p>
-          <span />
-        </div>
-
-        <p className="countdown-title">Do našeg velikog dana</p>
+        <p className="countdown-title">Brojimo zajedno</p>
 
         <div className="countdown-grid" role="timer" aria-live="polite">
           {countdownItems.map(([key, label]) => (

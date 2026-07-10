@@ -420,13 +420,11 @@ p {
 
 .countdown-label {
   color: var(--countdown-border);
-  font-family: var(--paragraph);
+  font-family: var(--display);
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.2em;
-  line-height: 1;
-  text-transform: uppercase;
-}
+  line-height: 1;}
 
 .schedule-section {
   display: grid;
@@ -520,28 +518,24 @@ p {
 .schedule-icon-suit {
   width: 72px;
   height: 99px;
-  background-image: url("/timelesslove/3.1.png");
   background-position: -150px 0;
 }
 
 .schedule-icon-dress {
   width: 88px;
   height: 95px;
-  background-image: url("/timelesslove/3.2.png");
   background-position: -142px -11px;
 }
 
 .schedule-icon-rings {
   width: 132px;
   height: 92px;
-  background-image: url("/timelesslove/3.3.png");
   background-position: -120px -12px;
 }
 
 .schedule-icon-couple {
   width: 76px;
   height: 92px;
-  background-image: url("/timelesslove/3.4.png");
   background-position: -148px -12px;
 }
 
@@ -565,14 +559,12 @@ p {
 .schedule-line-1 {
   width: 132px;
   height: 98px;
-  background-image: url("/timelesslove/3.line1.png");
   background-position: -138px -20px;
 }
 
 .schedule-line-2 {
   width: 128px;
   height: 84px;
-  background-image: url("/timelesslove/3.line2.png");
   background-position: -137px -33px;
 }
 
@@ -695,10 +687,7 @@ p {
 }
 
 .rsvp-ornament-bottom {
-  margin-top: clamp(16px, 4vw, 24px);
-  background-image: url("/timelesslove/rsvpbottom.png");
-  background-position: -50px -38px;
-  background-size: 386px 544px;
+  display: none;
 }
 
 .rsvp-button {
@@ -715,7 +704,7 @@ p {
   font-size: 14px;
   font-family: var(--paragraph);
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: 0;
   text-decoration: none;
   text-transform: uppercase;
   box-shadow: 0 12px 24px rgba(80, 72, 58, 0.1);
@@ -1010,7 +999,7 @@ p {
 .countdown-value {
   font-family: "Geist", sans-serif;
   font-size: clamp(2rem, 9vw, 2.65rem);
-  font-style: normal;
+  font-style: italic;
   font-weight: 500;
   letter-spacing: -0.04em;
 }
@@ -1056,3 +1045,408 @@ p {
   background: rgba(123, 110, 106, 0.12);
   color: #554945;
 }
+/* RSVP form and ornamental countdown sync */
+.countdown-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0 clamp(42px, 8svh, 76px);
+}
+
+.countdown-inner {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  overflow: hidden;
+  background: transparent;
+  color: var(--invitation-border);
+  padding: 62px 18px 72px;
+  text-align: center;
+}
+
+.countdown-inner > .countdown-date-row {
+  display: none;
+}
+
+.countdown-title {
+  margin: 0;
+  white-space: nowrap;
+  color: inherit;
+  font-family: var(--display);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  width: 100%;
+  max-width: 520px;
+  margin: 30px auto 0;
+}
+
+.countdown-box {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 0;
+}
+
+.countdown-box + .countdown-box {
+  border-left: 1px solid rgba(107, 90, 66, 0.28);
+}
+
+.countdown-box + .countdown-box::before {
+  content: none;
+}
+
+.countdown-value {
+  display: block;
+  width: auto;
+  color: inherit;
+  font-family: var(--display);
+  font-size: 34px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.countdown-value span {
+  display: inline;
+}
+
+.countdown-label {
+  margin-top: 8px;
+  color: inherit;
+  font-family: var(--paragraph);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  opacity: 0.76;
+  text-transform: uppercase;
+}
+
+.rsvp-section {
+  position: relative;
+  overflow: hidden;
+  padding: 26px clamp(16px, 4vw, 28px) clamp(56px, 9svh, 84px);
+}
+
+.rsvp-inner {
+  position: relative;
+  display: flex;
+  width: min(100%, 430px);
+  flex-direction: column;
+  align-items: center;
+  color: var(--invitation-border);
+  text-align: center;
+}
+
+.rsvp-ornament-top {
+  margin-top: 0;
+  margin-bottom: 26px;
+}
+
+.rsvp-ornament-bottom {
+  display: none;
+}
+
+.rsvp-title {
+  margin: 0;
+  color: var(--invitation-border);
+  font-family: var(--display);
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.rsvp-title + .rsvp-text {
+  margin-top: 16px;
+}
+
+.rsvp-text {
+  max-width: 330px;
+  margin: 0;
+  color: rgba(95, 85, 82, 0.86);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.rsvp-form {
+  display: grid;
+  width: min(100%, 390px);
+  gap: 14px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.rsvp-form label {
+  display: grid;
+  gap: 7px;
+}
+
+.rsvp-form label > span {
+  color: var(--invitation-border);
+  font-family: var(--paragraph);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+  width: 100%;
+  border: 1px solid rgba(107, 90, 66, 0.34);
+  border-radius: 0;
+  background: rgba(255, 252, 246, 0.56);
+  color: var(--invitation-text);
+  font: 15px/1.35 var(--paragraph);
+  outline: none;
+  padding: 12px 13px;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.rsvp-form textarea {
+  min-height: 86px;
+  resize: vertical;
+}
+
+.rsvp-form input::placeholder,
+.rsvp-form textarea::placeholder {
+  color: rgba(95, 85, 82, 0.46);
+}
+
+.rsvp-form input:focus,
+.rsvp-form select:focus,
+.rsvp-form textarea:focus {
+  border-color: rgba(107, 90, 66, 0.7);
+  background: rgba(255, 252, 246, 0.78);
+  box-shadow: 0 0 0 3px rgba(107, 90, 66, 0.1);
+}
+
+.submit-rsvp {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid rgba(107, 90, 66, 0.7);
+  border-radius: 0;
+  background: var(--invitation-border);
+  color: #fffaf2;
+  cursor: pointer;
+  font-family: var(--paragraph);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  margin-top: 6px;
+  padding: 14px 24px;
+  text-transform: uppercase;
+  transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.submit-rsvp:hover,
+.submit-rsvp:focus-visible {
+  background: #554936;
+  box-shadow: 0 12px 24px rgba(80, 72, 58, 0.12);
+  transform: translateY(-1px);
+}
+
+.submit-rsvp:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
+
+.rsvp-error {
+  margin: 0;
+  color: #9f3b31;
+  font-size: 13px;
+  text-align: center;
+}
+
+.rsvp-success {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  width: min(100%, 340px);
+  margin-top: 30px;
+  border: 1px solid rgba(107, 90, 66, 0.28);
+  background: rgba(255, 252, 246, 0.46);
+  color: var(--invitation-border);
+  padding: 24px 18px;
+  text-align: center;
+}
+
+.rsvp-success > span {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(107, 90, 66, 0.32);
+  border-radius: 999px;
+}
+
+.rsvp-success h3 {
+  margin: 6px 0 0;
+  font-family: var(--display);
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.rsvp-success p {
+  margin: 0;
+  font-size: 14px;
+}
+
+@media (min-width: 640px) {
+  .countdown-inner {
+    padding: 72px 40px 82px;
+  }
+
+  .countdown-value {
+    font-size: 46px;
+  }
+
+  .countdown-label {
+    font-size: 9px;
+  }
+}
+/* End RSVP form and ornamental countdown sync */
+/* Section rhythm after gallery removal */
+.calendar-section {
+  padding-bottom: clamp(38px, 7svh, 62px);
+}
+
+.schedule-section {
+  padding-bottom: clamp(28px, 6svh, 46px);
+}
+
+.countdown-section {
+  padding: 0;
+}
+
+.countdown-inner {
+  padding: 36px 18px 44px;
+}
+
+.rsvp-section {
+  padding-top: clamp(22px, 5svh, 38px);
+}
+
+@media (min-width: 640px) {
+  .countdown-inner {
+    padding: 44px 40px 54px;
+  }
+}
+/* End section rhythm after gallery removal */
+/* Porcelain-style ceremonial program */
+.schedule-section {
+  display: block;
+  padding: clamp(18px, 4svh, 34px) clamp(16px, 4vw, 28px) clamp(34px, 7svh, 54px);
+}
+
+.schedule-list {
+  display: block;
+  width: min(100%, 430px);
+  margin: 0 auto;
+}
+
+.schedule-heading h2 {
+  margin: 0 0 26px;
+  color: var(--invitation-border);
+  font-family: var(--display);
+  font-size: 38px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-align: left;
+}
+
+.schedule-card {
+  display: grid;
+  gap: 0;
+  margin-top: 12px;
+  border: 1px solid rgba(107, 90, 66, 0.34);
+  border-radius: 30px 30px 10px 30px;
+  background: rgba(255, 252, 246, 0.56);
+  box-shadow: 0 10px 24px rgba(80, 72, 58, 0.06);
+  color: var(--invitation-border);
+  padding: 22px 18px;
+  text-align: left;
+}
+
+.schedule-card-inverse {
+  border-radius: 10px 30px 30px 30px;
+}
+
+.schedule-card time {
+  display: block;
+  font-family: var(--paragraph);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.schedule-card h3 {
+  margin: 8px 0 4px;
+  font-family: var(--display);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+.schedule-card p {
+  margin: 0;
+  color: rgba(95, 85, 82, 0.86);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.schedule-card a {
+  display: inline-block;
+  justify-self: start;
+  margin-top: 12px;
+  border-bottom: 1px solid currentColor;
+  color: var(--invitation-border);
+  font-family: var(--paragraph);
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  padding-bottom: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.schedule-block,
+.schedule-row,
+.schedule-row-reverse,
+.schedule-connector,
+.schedule-icon-wrap,
+.schedule-icon,
+.schedule-line {
+  display: none;
+}
+/* End porcelain-style ceremonial program */
