@@ -859,6 +859,7 @@ p {
 
 @media (prefers-reduced-motion: reduce) {
   .profile-names,
+  .profile-text-group,
   .profile-invitation-copy {
     animation: none;
     filter: none;
