@@ -132,6 +132,14 @@ p {
   animation: name-reveal 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+.profile-text-group {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  animation: copy-reveal 950ms cubic-bezier(0.16, 1, 0.3, 1) 220ms both;
+}
+
 .profile-invitation-copy {
   width: min(100%, 35rem);
   margin: 2rem 0 0;
@@ -139,7 +147,6 @@ p {
   font-weight: 400;
   line-height: 1.75;
   text-align: center;
-  animation: copy-reveal 950ms cubic-bezier(0.16, 1, 0.3, 1) 220ms both;
 }
 
 .profile-event-date {
@@ -856,6 +863,13 @@ p {
     animation: none;
     filter: none;
   }
+
+  .profile-frame img {
+    clip-path: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Full-screen cover with a hand-torn, scraped lower edge. */
@@ -920,6 +934,19 @@ p {
   border-radius: 0;
   object-fit: cover;
   object-position: 50% center;
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+  transform: scale(1.075);
+  transition:
+    clip-path 1.35s cubic-bezier(0.22, 1, 0.36, 1) 260ms,
+    opacity 800ms ease 260ms,
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1) 260ms;
+}
+
+.profile-frame.is-loaded img {
+  clip-path: inset(0);
+  opacity: 1;
+  transform: scale(1);
 }
 
 .profile-names {
