@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PetalMark from "../components/PetalMark.jsx";
 
 const weddingDate = new Date("2026-09-26T00:00:00+02:00").getTime();
 
@@ -43,6 +44,7 @@ export default function CountdownSection() {
   return (
     <section className="countdown-section" aria-label="Countdown">
       <div className="countdown-inner">
+        <PetalMark />
         <p className="countdown-title">Brojimo zajedno</p>
 
         <div className="countdown-grid" role="timer" aria-live="polite">

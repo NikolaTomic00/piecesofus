@@ -1,7 +1,18 @@
+import PetalMark from "../components/PetalMark.jsx";
+
 function FooterSection() {
   return (
-    <footer className="mx-auto w-full max-w-[26.875rem] px-6 pb-8 pt-2 text-center font-['Quicksand',sans-serif] text-[0.875rem] text-[var(--invitation-border)]/75 md:max-w-[35rem]">
-      <p>© 2026 epozivnice.online. Sva prava zadržana.</p>
+    <footer className="footer-section">
+      <PetalMark />
+      <p className="footer-initials">I &amp; A</p>
+      <span className="footer-note">Radosno vas očekujemo.</span>
+      <p className="footer-legal">
+        © 2026{" "}
+        <a href="https://epozivnice.online" target="_blank" rel="noreferrer">
+          epozivnice.online
+        </a>
+        . Sva prava zadržana.
+      </p>
     </footer>
   );
 }

@@ -29,7 +29,7 @@ export default function ProfilePicSection() {
           nama dan naše najveće sreće.
         </p>
 
-        <p className="profile-event-date">26. SEPTEMBAR 2026.</p>
+        <p className="profile-event-date">26.09.2026.</p>
         <p className="profile-event-location">Hotel Sheraton</p>
         <p className="profile-event-location">Novi Sad, Srbija</p>
       </div>

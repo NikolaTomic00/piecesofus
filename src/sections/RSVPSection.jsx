@@ -115,13 +115,11 @@ export default function RSVPSection() {
   return (
     <section className="rsvp-section" aria-label="RSVP">
       <div className="rsvp-inner">
-        <span className="rsvp-ornament rsvp-ornament-top" aria-hidden="true" />
-
         <h2 className="rsvp-title">Radujemo se vašem dolasku</h2>
 
         <p className="rsvp-text">
-          Molimo vas da svoj dolazak potvrdite najkasnije do 15. septembra 2026.
-          godine.
+          Molimo vas da svoj dolazak potvrdite najkasnije do{" "}
+          <strong>15. septembra 2026. godine.</strong>
         </p>
 
         <RSVPForm />

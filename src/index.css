@@ -55,6 +55,11 @@ p {
   font-family: var(--paragraph);
 }
 
+.petal-mark {
+  stroke: currentColor;
+  stroke-width: 1.25;
+}
+
 .invitation-bg {
   background-color: var(--invitation-bg);
   background-image: url("/timelesslove/background.png");
@@ -140,8 +145,8 @@ p {
 .profile-event-date {
   margin: 2.5rem 0 0;
   color: var(--invitation-border);
-  font-family: var(--heading);
-  font-size: 1.875rem;
+  font-family: var(--paragraph);
+  font-size: 26px;
   line-height: 1.2;
   letter-spacing: 0.08em;
   text-align: center;
@@ -681,7 +686,7 @@ p {
 .rsvp-ornament-top {
   margin-top: clamp(28px, 7vw, 42px);
   margin-bottom: clamp(16px, 4vw, 24px);
-  background-image: url("/timelesslove/rsvptop.png");
+  background-image: none;
   background-position: -50px -29px;
   background-size: 386px 544px;
 }
@@ -1050,7 +1055,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px 0 clamp(42px, 8svh, 76px);
+  padding: 32px 0;
 }
 
 .countdown-inner {
@@ -1058,10 +1063,19 @@ p {
   width: 100%;
   max-width: none;
   overflow: hidden;
-  background: transparent;
-  color: var(--invitation-border);
-  padding: 62px 18px 72px;
+  background: var(--invitation-border);
+  color: #f7f1ee;
+  padding: 66px 18px 76px;
   text-align: center;
+}
+
+.countdown-inner > .petal-mark {
+  position: absolute;
+  top: -44px;
+  left: -35px;
+  width: 170px;
+  opacity: 0.16;
+  transform: rotate(-20deg);
 }
 
 .countdown-inner > .countdown-date-row {
@@ -1072,19 +1086,21 @@ p {
   margin: 0;
   white-space: nowrap;
   color: inherit;
-  font-family: var(--display);
-  font-size: 24px;
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.2;}
+  font-family: var(--paragraph);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
 
 .countdown-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   width: 100%;
-  max-width: 520px;
+  max-width: 672px;
   margin: 30px auto 0;
 }
 
@@ -1100,7 +1116,7 @@ p {
 }
 
 .countdown-box + .countdown-box {
-  border-left: 1px solid rgba(107, 90, 66, 0.28);
+  border-left: 1px solid rgba(247, 241, 238, 0.27);
 }
 
 .countdown-box + .countdown-box::before {
@@ -1182,6 +1198,11 @@ p {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.7;
+}
+
+.rsvp-text strong {
+  color: var(--invitation-border);
+  font-weight: 700;
 }
 
 .rsvp-form {
@@ -1316,6 +1337,10 @@ p {
 }
 
 @media (min-width: 640px) {
+  .countdown-grid {
+    max-width: 520px;
+  }
+
   .countdown-inner {
     padding: 72px 40px 82px;
   }
@@ -1331,35 +1356,37 @@ p {
 /* End RSVP form and ornamental countdown sync */
 /* Section rhythm after gallery removal */
 .calendar-section {
-  padding-bottom: clamp(38px, 7svh, 62px);
+  padding-bottom: clamp(28px, 5svh, 46px);
 }
 
 .schedule-section {
-  padding-bottom: clamp(28px, 6svh, 46px);
+  padding-bottom: clamp(18px, 4svh, 32px);
 }
 
 .countdown-section {
-  padding: 0;
+  padding: 32px 0;
 }
 
 .countdown-inner {
-  padding: 36px 18px 44px;
+  padding: 66px 18px 76px;
 }
 
 .rsvp-section {
-  padding-top: clamp(22px, 5svh, 38px);
+  padding: clamp(14px, 3svh, 24px) clamp(16px, 4vw, 28px)
+    clamp(30px, 5svh, 46px);
 }
 
 @media (min-width: 640px) {
   .countdown-inner {
-    padding: 44px 40px 54px;
+    padding: 72px 40px 82px;
   }
 }
 /* End section rhythm after gallery removal */
 /* Porcelain-style ceremonial program */
 .schedule-section {
   display: block;
-  padding: clamp(18px, 4svh, 34px) clamp(16px, 4vw, 28px) clamp(34px, 7svh, 54px);
+  padding: clamp(16px, 3svh, 28px) clamp(16px, 4vw, 28px)
+    clamp(22px, 4svh, 36px);
 }
 
 .schedule-list {
@@ -1372,7 +1399,7 @@ p {
   margin: 0 0 26px;
   color: var(--invitation-border);
   font-family: var(--display);
-  font-size: 38px;
+  font-size: 30px;
   font-style: italic;
   font-weight: 500;
   letter-spacing: -0.04em;
@@ -1450,3 +1477,64 @@ p {
   display: none;
 }
 /* End porcelain-style ceremonial program */
+
+.footer-section {
+  position: relative;
+  display: grid;
+  min-height: 154px;
+  place-items: center;
+  overflow: hidden;
+  padding: 42px 20px 38px;
+  background: var(--invitation-border);
+  color: #fff8ef;
+  text-align: center;
+}
+
+.footer-section .petal-mark {
+  position: absolute;
+  right: -30px;
+  bottom: -38px;
+  width: 150px;
+  opacity: 0.14;
+}
+
+.footer-initials {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 35px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.footer-note {
+  margin-top: 7px;
+  font-family: var(--paragraph);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.footer-legal {
+  position: absolute;
+  bottom: 10px;
+  left: 14px;
+  max-width: calc(100% - 28px);
+  margin: 0;
+  color: currentColor;
+  font-family: "Geist", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+  opacity: 0.48;
+  text-align: left;
+}
+
+.footer-legal a {
+  color: currentColor;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
